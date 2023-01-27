@@ -17,6 +17,7 @@ GPIO.setup (6, GPIO.IN) # GPIO 6 input knop 4
 value = 1
 complete = 0
 land = ' Ethiopië'
+land_thee = ' China'
 
 # Initialize SPI bus
 spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
@@ -105,6 +106,62 @@ try:
                                     display.show()
                                     time.sleep (0.3)
 
+                                    if (GPIO.input (17)==1):
+                                        image = Image.new('1', (display.width, display.height))
+                                        draw = ImageDraw.Draw(image)
+                                        draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                        draw.text((1,0),' Keuze', font=font)
+                                        draw.text((1,8),(' Koffie groot '), font=font)
+                                        draw.text((1,16),(' Naturel'), font=font)
+                                        draw.text((1,24), ' Herkomst', font=font)
+                                        draw.text((1,32), land, font=font)
+                                        display.image(image)
+                                        display.show()
+                                        time.sleep (15.0)
+                                        complete = 1
+
+                                    if (GPIO.input (27)==1):
+                                        image = Image.new('1', (display.width, display.height))
+                                        draw = ImageDraw.Draw(image)
+                                        draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                        draw.text((1,0),' Keuze', font=font)
+                                        draw.text((1,8),(' Koffie groot '), font=font)
+                                        draw.text((1,16),(' Melk'), font=font)
+                                        draw.text((1,24), ' Herkomst', font=font)
+                                        draw.text((1,32), land, font=font)
+                                        display.image(image)
+                                        display.show()
+                                        time.sleep (15.0)
+                                        complete = 1
+
+                                    if (GPIO.input (5)==1):
+                                        image = Image.new('1', (display.width, display.height))
+                                        draw = ImageDraw.Draw(image)
+                                        draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                        draw.text((1,0),' Keuze', font=font)
+                                        draw.text((1,8),(' Koffie groot '), font=font)
+                                        draw.text((1,16),(' Suiker'), font=font)
+                                        draw.text((1,24), ' Herkomst', font=font)
+                                        draw.text((1,32), land, font=font)
+                                        display.image(image)
+                                        display.show()
+                                        time.sleep (15.0)
+                                        complete = 1
+
+                                    if (GPIO.input (6)==1):
+                                        image = Image.new('1', (display.width, display.height))
+                                        draw = ImageDraw.Draw(image)
+                                        draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                        draw.text((1,0),' Keuze', font=font)
+                                        draw.text((1,8),(' Koffie groot '), font=font)
+                                        draw.text((1,16),(' Melk+Suiker'), font=font)
+                                        draw.text((1,24), ' Herkomst', font=font)
+                                        draw.text((1,32), land, font=font)
+                                        display.image(image)
+                                        display.show()
+                                        time.sleep (15.0)
+                                        complete = 1
+
                             if (GPIO.input (27)==1):
                                 while complete != 1:
                                     image = Image.new('1', (display.width, display.height))
@@ -118,6 +175,61 @@ try:
                                     display.image(image)
                                     display.show()
                                     time.sleep (0.3)
+                                    if (GPIO.input (17)==1):
+                                        image = Image.new('1', (display.width, display.height))
+                                        draw = ImageDraw.Draw(image)
+                                        draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                        draw.text((1,0),' Keuze', font=font)
+                                        draw.text((1,8),(' Koffie klein '), font=font)
+                                        draw.text((1,16),(' Naturel'), font=font)
+                                        draw.text((1,24), ' Herkomst', font=font)
+                                        draw.text((1,32), land, font=font)
+                                        display.image(image)
+                                        display.show()
+                                        time.sleep (15.0)
+                                        complete = 1
+
+                                    if (GPIO.input (27)==1):
+                                        image = Image.new('1', (display.width, display.height))
+                                        draw = ImageDraw.Draw(image)
+                                        draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                        draw.text((1,0),' Keuze', font=font)
+                                        draw.text((1,8),(' Koffie klein '), font=font)
+                                        draw.text((1,16),(' Melk'), font=font)
+                                        draw.text((1,24), ' Herkomst', font=font)
+                                        draw.text((1,32), land, font=font)
+                                        display.image(image)
+                                        display.show()
+                                        time.sleep (15.0)
+                                        complete = 1
+
+                                    if (GPIO.input (5)==1):
+                                        image = Image.new('1', (display.width, display.height))
+                                        draw = ImageDraw.Draw(image)
+                                        draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                        draw.text((1,0),' Keuze', font=font)
+                                        draw.text((1,8),(' Koffie klein '), font=font)
+                                        draw.text((1,16),(' Suiker'), font=font)
+                                        draw.text((1,24), ' Herkomst', font=font)
+                                        draw.text((1,32), land, font=font)
+                                        display.image(image)
+                                        display.show()
+                                        time.sleep (15.0)
+                                        complete = 1
+
+                                    if (GPIO.input (6)==1):
+                                        image = Image.new('1', (display.width, display.height))
+                                        draw = ImageDraw.Draw(image)
+                                        draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                        draw.text((1,0),' Keuze', font=font)
+                                        draw.text((1,8),(' Koffie klein '), font=font)
+                                        draw.text((1,16),(' Melk+Suiker'), font=font)
+                                        draw.text((1,24), ' Herkomst', font=font)
+                                        draw.text((1,32), land, font=font)
+                                        display.image(image)
+                                        display.show()
+                                        time.sleep (15.0)
+                                        complete = 1
 
                     if (GPIO.input (27)==1):
                         image = Image.new('1', (display.width, display.height))
@@ -131,6 +243,7 @@ try:
                         display.image(image)
                         display.show()
                         time.sleep (15.0)
+                        complete = 1
 
                     if (GPIO.input (5)==1):
                         image = Image.new('1', (display.width, display.height))
@@ -144,6 +257,7 @@ try:
                         display.image(image)
                         display.show()
                         time.sleep (15.0)
+                        complete = 1
 
                     if (GPIO.input (6)==1):
                         image = Image.new('1', (display.width, display.height))
@@ -157,9 +271,7 @@ try:
                         display.image(image)
                         display.show()
                         time.sleep (15.0)
-                        complete = 1
-
-                    
+                        complete = 1    
 
 
             if (GPIO.input (27)==1): #thee
@@ -188,6 +300,62 @@ try:
                             display.image(image)
                             display.show()
                             time.sleep (0.3)
+                            if (GPIO.input (17)==1):
+                                image = Image.new('1', (display.width, display.height))
+                                draw = ImageDraw.Draw(image)
+                                draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                draw.text((1,0),' Keuze', font=font)
+                                draw.text((1,8),(' Citroen thee '), font=font)
+                                draw.text((1,16),(' Naturel'), font=font)
+                                draw.text((1,24), ' Herkomst', font=font)
+                                draw.text((1,32), land_thee, font=font)
+                                display.image(image)
+                                display.show()
+                                time.sleep (15.0)
+                                complete = 1
+                            
+                            if (GPIO.input (27)==1):
+                                image = Image.new('1', (display.width, display.height))
+                                draw = ImageDraw.Draw(image)
+                                draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                draw.text((1,0),' Keuze', font=font)
+                                draw.text((1,8),(' Citroen thee '), font=font)
+                                draw.text((1,16),(' Melk'), font=font)
+                                draw.text((1,24), ' Herkomst', font=font)
+                                draw.text((1,32), land_thee, font=font)
+                                display.image(image)
+                                display.show()
+                                time.sleep (15.0)
+                                complete = 1
+
+                            if (GPIO.input (5)==1):
+                                image = Image.new('1', (display.width, display.height))
+                                draw = ImageDraw.Draw(image)
+                                draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                draw.text((1,0),' Keuze', font=font)
+                                draw.text((1,8),(' Citroen thee '), font=font)
+                                draw.text((1,16),(' Suiker'), font=font)
+                                draw.text((1,24), ' Herkomst', font=font)
+                                draw.text((1,32), land_thee, font=font)
+                                display.image(image)
+                                display.show()
+                                time.sleep (15.0)
+                                complete = 1
+
+                            if (GPIO.input (6)==1):
+                                image = Image.new('1', (display.width, display.height))
+                                draw = ImageDraw.Draw(image)
+                                draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                draw.text((1,0),' Keuze', font=font)
+                                draw.text((1,8),(' Citroen thee '), font=font)
+                                draw.text((1,16),(' Melk+Suiker'), font=font)
+                                draw.text((1,24), ' Herkomst', font=font)
+                                draw.text((1,32), land_thee, font=font)
+                                display.image(image)
+                                display.show()
+                                time.sleep (15.0)
+                                complete = 1
+
 
                     if (GPIO.input (27)==1):
                          while complete != 1:
@@ -202,6 +370,61 @@ try:
                             display.image(image)
                             display.show()
                             time.sleep (0.3)
+                            if (GPIO.input (17)==1):
+                                image = Image.new('1', (display.width, display.height))
+                                draw = ImageDraw.Draw(image)
+                                draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                draw.text((1,0),' Keuze', font=font)
+                                draw.text((1,8),(' Rooibos thee '), font=font)
+                                draw.text((1,16),(' Naturel'), font=font)
+                                draw.text((1,24), ' Herkomst', font=font)
+                                draw.text((1,32), land_thee, font=font)
+                                display.image(image)
+                                display.show()
+                                time.sleep (15.0)
+                                complete = 1
+                            
+                            if (GPIO.input (27)==1):
+                                image = Image.new('1', (display.width, display.height))
+                                draw = ImageDraw.Draw(image)
+                                draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                draw.text((1,0),' Keuze', font=font)
+                                draw.text((1,8),(' Rooibos thee '), font=font)
+                                draw.text((1,16),(' Melk'), font=font)
+                                draw.text((1,24), ' Herkomst', font=font)
+                                draw.text((1,32), land_thee, font=font)
+                                display.image(image)
+                                display.show()
+                                time.sleep (15.0)
+                                complete = 1
+
+                            if (GPIO.input (5)==1):
+                                image = Image.new('1', (display.width, display.height))
+                                draw = ImageDraw.Draw(image)
+                                draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                draw.text((1,0),' Keuze', font=font)
+                                draw.text((1,8),(' Rooibos thee '), font=font)
+                                draw.text((1,16),(' Suiker'), font=font)
+                                draw.text((1,24), ' Herkomst', font=font)
+                                draw.text((1,32), land_thee, font=font)
+                                display.image(image)
+                                display.show()
+                                time.sleep (15.0)
+                                complete = 1
+
+                            if (GPIO.input (6)==1):
+                                image = Image.new('1', (display.width, display.height))
+                                draw = ImageDraw.Draw(image)
+                                draw.rectangle((0, 0, display.width, display.height), outline=255, fill=255)
+                                draw.text((1,0),' Keuze', font=font)
+                                draw.text((1,8),(' Rooibos thee '), font=font)
+                                draw.text((1,16),(' Melk+Suiker'), font=font)
+                                draw.text((1,24), ' Herkomst', font=font)
+                                draw.text((1,32), land_thee, font=font)
+                                display.image(image)
+                                display.show()
+                                time.sleep (15.0)
+                                complete = 1
                             
                     
                 
