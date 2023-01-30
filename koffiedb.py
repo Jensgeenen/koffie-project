@@ -1,5 +1,3 @@
-
-
 import RPi.GPIO as GPIO
 import time
 import busio
@@ -9,7 +7,6 @@ import adafruit_pcd8544
 import sys
 # import mysql.connector as mariadb
 import mariadb
-
 
 import sqlite3
 
