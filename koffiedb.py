@@ -15,7 +15,6 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 from mfrc522 import SimpleMFRC522
-
 import spidev
 
 GPIO.setmode (GPIO.BCM)
@@ -73,11 +72,6 @@ font = ImageFont.load_default()
 
 reader = SimpleMFRC522()
 
-statement = "SELECT firstName FROM User "
-
-cursor.execute(statement)
-for i in cursor:
-    print(i)
 
 try:
     
