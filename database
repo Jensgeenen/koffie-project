@@ -1,0 +1,94 @@
+drop schema if exists Koffie;
+drop table if exists Koffie.Drink;
+drop table if exists Koffie.User;
+drop table if exists Koffie.Stock;
+drop table if exists Koffie.Card;
+drop table if exists Koffie.Order;
+drop table if exists Koffie.OriginCountry;
+
+create schema Koffie;
+use Koffie;
+
+
+create table Koffie.Stock
+(StockID int primary key,
+name varchar(50) not null,
+isThereStock boolean not null);
+
+create table Koffie.Card
+(cardID int primary key,
+uidCardNumber varchar(12) not null,
+balance int not null);
+
+create table Koffie.Order
+(orderID int primary key AUTO_INCREMENT,
+drinkID int not null,
+userID int not null,
+cardID int not null,
+orderDate date not null,
+orderTime time not null,
+orderPrice int not null);
+
+create table Koffie.OriginCountry
+(originCountryID int primary key,
+originCountryName varchar(50) not null);
+
+create table Koffie.Drink
+(drinkID int primary key,
+drinkName varchar(50) not null,
+drinkPrice int not null,
+originCountryID int not null,
+FOREIGN KEY (originCountryID) REFERENCES Koffie.OriginCountry(originCountryID));
+
+create table Koffie.User
+(userID int primary key,
+firstName varchar(50) not null,
+lastName varchar(50) not null,
+email varchar(50),
+password varchar(50),
+cardID int not null,
+FOREIGN KEY (cardID) references Koffie.Card(cardID));
+
+insert into Koffie.Card values (1, 219196986759, 0);
+insert into Koffie.Card values (2, 703336846800, 0);
+insert into Koffie.Card values (3, 358396564909, 0);
+insert into Koffie.Card values (4, 566597030442, 0);
+
+
+insert into Koffie.OriginCountry values (1, 'Italië');
+insert into Koffie.OriginCountry values (2, 'Nederland');
+insert into Koffie.OriginCountry values (3, 'Duitsland');
+insert into Koffie.OriginCountry values (4, 'Frankrijk');
+insert into Koffie.OriginCountry values (5, 'België');
+
+insert into Koffie.Drink values (1, 'Koffie Groot', 2, 1);
+insert into Koffie.Drink values (2, 'Koffie Klein', 1, 1);
+insert into Koffie.Drink values (3, 'Koffie Groot Melk', 2, 2);
+insert into Koffie.Drink values (4, 'Koffie Klein Melk', 1, 2);
+insert into Koffie.Drink values (5, 'Koffie Groot Suiker', 2, 3);
+insert into Koffie.Drink values (6, 'Koffie Klein Suiker', 1, 3);
+insert into Koffie.Drink values (7, 'Koffie Groot Melk Suiker', 2, 4);
+insert into Koffie.Drink values (8, 'Koffie Klein Melk Suiker', 1, 4);
+insert into Koffie.Drink values (9, 'Latte macchiato', 2, 5);
+insert into Koffie.Drink values (17, 'Cappuccino', 2, 4);
+insert into Koffie.Drink values (25, 'Espresso', 2, 3);
+insert into Koffie.Drink values (41, 'Thee Citoen', 2, 1);
+insert into Koffie.Drink values (42, 'Thee Citoen Melk', 2, 2);
+insert into Koffie.Drink values (43, 'Thee Citoen Suiker', 2, 3);
+insert into Koffie.Drink values (44, 'Thee Citoen Melk Suiker', 2, 4);
+insert into Koffie.Drink values (45, 'Thee Rooibos', 2, 5);
+insert into Koffie.Drink values (46, 'Thee Rooibos Melk', 2, 1);
+insert into Koffie.Drink values (47, 'Thee Rooibos Suiker', 2, 2);
+insert into Koffie.Drink values (48, 'Thee Rooibos Melk Suiker', 2, 3);
+
+insert into Koffie.User values (1, 'Jochen', 'Mariën', ' ', ' ', 1);
+insert into Koffie.User values (2, 'Brent', 'Van de Reyd', ' ', ' ', 2);
+insert into Koffie.User values (3, 'Jens', 'Geenen', ' ', ' ', 3);
+insert into Koffie.User values (4, 'Leander', 'Van Bael', ' ', ' ', 4);
+
+
+
+insert into Koffie.Stock values (1, 'Melk', true);
+insert into Koffie.Stock values (2, 'Suiker', true);
+insert into Koffie.Stock values (3, 'Koffie', true);
+insert into Koffie.Stock values (4, 'Thee', true);
